@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<otrs_package version="1.0">
+    <!-- GENERATED WITH OTRS::OPM::Maker::Command::sopm (1.4) -->
+    <Name>AdminEditConfigXML</Name>
+    <Version>6.0.1</Version>
+    <Framework>6.0.x</Framework>
+    <Vendor>Perl-Services.de</Vendor>
+    <URL>http://www.perl-services.de</URL>
+    <Description Lang="de">Erlaubt es Admins auch ohne Zugriff auf den Server Konfigurationsdateien zu bearbeiten</Description>
+    <Description Lang="en">Allows admins to edit config files without access to server</Description>
+    <License>GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007</License>
+    <Filelist>
+        <File Permission="644" Location="Kernel/Config/Files/XML/AdminEditConfigXML.xml" />
+        <File Permission="644" Location="Kernel/Modules/AdminEditConfigXML.pm" />
+        <File Permission="644" Location="Kernel/Output/HTML/Templates/Standard/AdminEditConfigXML.tt" />
+        <File Permission="644" Location="var/httpd/htdocs/js/PS.AdminEditConfigXML.js" />
+    </Filelist>
+</otrs_package>

@@ -1,0 +1,68 @@
+# --
+# Copyright (C) 2020 Perl-Services.de, http://www.perl-services.de
+# --
+# This software comes with ABSOLUTELY NO WARRANTY. For details, see
+# the enclosed file COPYING for license information (AGPL). If you
+# did not receive this file, see http://www.gnu.org/licenses/agpl.txt.
+# --
+
+<div class="MainBox ARIARoleMain LayoutFixedSidebar SidebarFirst">
+    <h1>[% Translate("Edit Config XMLs") | html %]</h1>
+    <div class="SidebarColumn">
+        <div class="WidgetSimple">
+            <div class="Header">
+                <h2>[% Translate("Config Files") | html %]</h2>
+            </div>
+            <div class="Content">
+                [% Data.ConfigFilesSelect %]
+            </div>
+        </div>
+    </div>
+
+    <div class="ContentColumn">
+        <div class="WidgetSimple">
+            <div class="Header">
+                <h2>[% Translate("Add/Change Config file") | html %]</h2>
+            </div>
+            <div class="Content">
+                <div class="MessageBox Info" id="AdminEditConfigXML-Success" style="display: none">File saved</div>
+                <div class="MessageBox Error" id="AdminEditConfigXML-Error" style="display: none"></div>
+                <form action="[% Env("CGIHandle") %]" method="post" class="Validate">
+
+                    <input type="hidden" name="Action" value="[% Env("Action") %]"/>
+                    <input type="hidden" name="Subaction" value="Save"/>
+
+                    <fieldset class="TableLike">
+                        <label for="AdminEditConfigXML-File" class="Mandatory">
+                            <span class="Marker">*</span>
+                            [% Translate("Filename") | html %]:
+                        </label>
+                        <div class="">
+                            <input type="text" id="AdminEditConfigXML-File" name="Text" class="W75pc Validate_Required [% Data.TextInvalid | html %]">
+                        </div>
+                        <div class="Clear"></div>
+
+                        <label for="AdminEditConfigXML-Content" class="Mandatory">
+                            <span class="Marker">*</span>
+                            [% Translate("Config") | html %]:
+                        </label>
+                        <div class="">
+                            <textarea id="AdminEditConfigXML-Content" name="Text" class="W75pc Validate_Required [% Data.TextInvalid | html %]" rows="55" cols="[% Config("Ticket::Frontend::TextAreaNote") %]">[% Data.Text | html %]</textarea>
+                        </div>
+                        <div class="Clear"></div>
+
+                        <div class="Field">
+                            <button class="Primary" type="button" value="[% Translate("Save & Reload config") | html %]" data-reload="1">[% Translate("Save & Reload config") | html %]</button>
+                            [% Translate("or") | html %]
+                            <button class="Primary" type="button" value="[% Translate("Save") | html %]">[% Translate("Save") | html %]</button>
+                            [% Translate("or") | html %]
+                            <a href="[% Env("Baselink") %]Action=[% Env("Action") %]">[% Translate("Cancel") | html %]</a>
+                        </div>
+                        <div class="Clear"></div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="Clear"></div>
+</div>

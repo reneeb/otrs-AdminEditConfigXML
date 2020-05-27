@@ -1,0 +1,19 @@
+{
+    "name": "AdminEditConfigXML",
+    "version": "6.0.1",
+    "framework": [
+        "6.0.x"
+    ],
+    "vendor": {
+        "name": "Perl-Services.de",
+        "url": "http://www.perl-services.de"
+    },
+    "license": "GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007",
+    "description" : {
+        "en": "Allows admins to edit config files without access to server",
+        "de": "Erlaubt es Admins auch ohne Zugriff auf den Server Konfigurationsdateien zu bearbeiten"
+    },
+    "exclude_files" : [
+        "doc/AdminEditConfigXML.json"
+    ]
+}
